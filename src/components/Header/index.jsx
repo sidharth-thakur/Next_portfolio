@@ -44,24 +44,30 @@ export default function index() {
                 </div>
             </div>
             <div className={styles.nav}>
-                <Magnetic>
-                    <div className={styles.el}>
-                        <a>Work</a>
-                        <div className={styles.indicator}></div>
-                    </div>
-                </Magnetic>
-                <Magnetic>
-                    <div className={styles.el}>
-                        <a>About</a>
-                        <div className={styles.indicator}></div>
-                    </div>
-                </Magnetic>
-                <Magnetic>
-                    <div className={styles.el}>
-                        <a>Contact</a>
-                        <div className={styles.indicator}></div>
-                    </div>
-                </Magnetic>
+                <Rounded className={styles.btn}>
+                    <Magnetic>
+                        <div className={styles.el}>
+                            <a>Work</a>
+                            <div className={styles.indicator}></div>
+                        </div>
+                    </Magnetic>
+                </Rounded>
+                <Rounded className={styles.btn2}>
+                    <Magnetic>
+                        <div className={styles.el}>
+                            <a>About</a>
+                            <div className={styles.indicator}></div>
+                        </div>
+                    </Magnetic>
+                </Rounded>
+                <Rounded className={styles.btn3}>
+                    <Magnetic>
+                        <div className={styles.el}>
+                            <a>Contact</a>
+                            <div className={styles.indicator}></div>
+                        </div>
+                    </Magnetic>
+                </Rounded>
             </div>
         </div>
         <div ref={button} className={styles.headerButtonContainer}>

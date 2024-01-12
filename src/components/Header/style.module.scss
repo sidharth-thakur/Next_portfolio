@@ -59,9 +59,43 @@
     .nav{
         display: flex;
         align-items: center;
-   
-       
-
+        .btn{
+            top: 11%;
+            left: 76%;
+            width: 70px;
+            height: 70px;
+            color: white;
+            border-radius: 50%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn2{
+            top: 11%;
+            left: 83%;
+            width: 70px;
+            height: 70px;
+            color: white;
+            border-radius: 50%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn3{
+            top: 11%;
+            left: 90%;
+            width: 70px;
+            height: 70px;
+          
+            color: white;
+            border-radius: 50%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .el{
             display: flex;
             flex-direction: column;
