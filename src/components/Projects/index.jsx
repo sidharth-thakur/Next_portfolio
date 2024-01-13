@@ -10,12 +10,12 @@ import Rounded from '../../common/RoundedButton';
 const projects = [
   {
     title: "I FOOD U",
-    src: "c2montreal.png",
+    src: "iFoodu.png",
     color: "#000000"
   },
   {
     title: "React Portfolio",
-    src: "officestudio.png",
+    src: "reactPortfolio.png",
     color: "#8C8C8C"
   },
   {
