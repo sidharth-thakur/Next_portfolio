@@ -96,6 +96,14 @@
             align-items: center;
             justify-content: center;
         }
+        @media (max-width:500px ) {
+            .header{
+                font-weight: 400;
+            }
+            .btn,.btn2,.btn3{
+               display: none;
+            }
+        }
         .el{
             display: flex;
             flex-direction: column;
@@ -182,4 +190,3 @@
         
     }
 }
-

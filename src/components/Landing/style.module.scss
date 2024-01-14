@@ -10,7 +10,7 @@
     
     .sliderContainer{
       position: absolute;
-      top: calc(100vh - 300px);
+      top: calc(100vh - 350px);
     }
     
     .slider{
@@ -52,6 +52,18 @@
         transform: scale(2);
         margin-bottom: 100px;
       }
+      
+    }
+    @media (max-width: 500px) {
+      .description{
+        top: 74%;
+        left: 4%;
+      }
+      .description svg{
+        top: 50%;
+          margin-bottom: 28px;
+      }
+      
     }
   }
   
