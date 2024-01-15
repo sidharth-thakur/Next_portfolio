@@ -80,8 +80,8 @@ export default function Home() {
   <main onMouseMove={(e) => {moveItems(e.clientX, e.clientY)}} className={styles.projects}>
     <div className={styles.body}>
       {
-        projects.map( (project, index) => {
-          return <Project index={index} title={project.title} manageModal={manageModal} key={index}/>
+        projects.map( (project, index, scr) => {
+          return <Project index={index} title={project.title} src = {project.src} manageModal={manageModal} key={index}/>
         })
       }
     </div>

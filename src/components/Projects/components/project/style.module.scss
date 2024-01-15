@@ -7,21 +7,60 @@
     border-top: 1px solid rgb(201, 201, 201);
     cursor: pointer;
     transition: all 0.2s;
+    @media (max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+        border: none;
+        padding: 30px 100px 50px 100px;
+        
+        
+    }
+    img{
+        display: none;
+        @media (max-width: 500px) {
+            display: block;
+            width:100%;
+            margin-bottom: 30px;
+    
+            box-shadow: 7px 7px 7px rgb(201, 201, 201);
+
+            
+        }
+    }
 
     h2{
         font-size: 60px;
         margin: 0px;
         font-weight: 400;
         transition: all 0.4s;
+        @media (max-width: 500px) {
+            font-size:  calc(clamp(1.75em, 2.3vw, 2.5em) * 1.2);
+            width: 100%;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgb(201, 201, 201);
+            
+            
+        }
     }
 
     p{
         transition: all 0.4s;
         font-weight: 300;
+        @media (max-width: 500px) {
+            margin-top: 20px;
+            width: 100%;
+          
+            
+            
+        }
     }
 
     &:last-of-type{
         border-bottom: 1px solid rgb(201, 201, 201);
+        @media (max-width: 500px) {
+            border-bottom: none;
+            
+        }
     }
 
     &:hover{
