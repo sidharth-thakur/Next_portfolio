@@ -56,7 +56,7 @@
     }
     @media (max-width: 500px) {
       .description{
-        top: 74%;
+        top: calc(100vh - 25%);
         left: 4%;
       }
       .description svg{
