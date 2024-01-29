@@ -11,22 +11,26 @@ const projects = [
   {
     title: "I FOOD U",
     src: "iFoodu.png",
-    color: "#000000"
+    color: "#000000",
+    links: "https://sidharth-thakur.github.io/IfoodU.github.io/"
   },
   {
     title: "React Portfolio",
     src: "reactPortfolio.png",
-    color: "#8C8C8C"
+    color: "#8C8C8C",
+    links: "https://precious-moonbeam-deaf66.netlify.app/"
   },
   {
     title: "Face recognisation",
     src: "locomotive.png",
-    color: "#EFE8D3"
+    color: "#EFE8D3",
+    links: "https://iridescent-tartufo-bc4b7f.netlify.app/"
   },
   {
     title: "Quizz app",
     src: "silencio.png",
-    color: "#706D63"
+    color: "#706D63",
+    links: "https://www.youtube.com/"
   }
 ]
 
@@ -81,7 +85,7 @@ export default function Home() {
     <div className={styles.body}>
       {
         projects.map( (project, index, scr) => {
-          return <Project index={index} title={project.title} src = {project.src} manageModal={manageModal} key={index}/>
+          return <Project index={index} title={project.title} src = {project.src} links={project.links} manageModal={manageModal} key={index}/>
         })
       }
     </div>
