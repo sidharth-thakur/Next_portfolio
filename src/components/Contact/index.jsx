@@ -1,7 +1,7 @@
 import styles from './style.module.scss';
 import Image from 'next/image';
 import Rounded from '../../common/RoundedButton';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useScroll, motion, useTransform, useSpring } from 'framer-motion';
 import Magnetic from '../../common/Magnetic';
 
@@ -14,6 +14,14 @@ export default function Index() {
     const x = useTransform(scrollYProgress, [0, 1], [0, 100])
     const y = useTransform(scrollYProgress, [0, 1], [-500, 0])
     const rotate = useTransform(scrollYProgress, [0, 1], [120, 90])
+    const [time, setTime] = useState(new Date())
+
+    useEffect(()=> {
+        const timer = setInterval(() => {
+            setTime(new Date())
+        },1000)
+        return () => clearInterval(timer)
+    })
     return (
         <motion.div style={{y}} ref={container} className={styles.contact}>
             <div className={styles.body}>
@@ -54,7 +62,10 @@ export default function Index() {
                         </span>
                         <span>
                             <h3>LOCAL TIMES</h3>
-                            <p>11:49 PM GMT+2</p>
+                            <p>{time.toLocaleDateString(undefined,{
+                                hour: '2-digit',
+                                minute: '2-digit',
+                            })}</p>
                         </span>
                     </div>
                     <div>
