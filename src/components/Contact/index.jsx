@@ -43,23 +43,23 @@ export default function Index() {
                             <p>Sidharththakurmailbox@gmail.com</p>
                         </Rounded>
                         <Rounded>
-                            <p>+91 821 980 5546</p>
+                            <p>+91-821-980-5546</p>
                         </Rounded>
                 </div>
                 <div className={styles.info}>
                     <div>
                         <span>
-                            <h3>Version</h3>
-                            <p>2022 © Edition</p>
+                            <h3>VERSION</h3>
+                            <p>2024 © Edition</p>
                         </span>
                         <span>
-                            <h3>Version</h3>
+                            <h3>LOCAL TIMES</h3>
                             <p>11:49 PM GMT+2</p>
                         </span>
                     </div>
                     <div>
                         <span>
-                            <h3>socials</h3>
+                            <h3>SOCIALS</h3>
                             <Magnetic>
                                 <p>Linkdin</p>
                             </Magnetic>
