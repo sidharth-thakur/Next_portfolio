@@ -4,6 +4,7 @@ import Rounded from '../../common/RoundedButton';
 import { useRef, useEffect, useState } from 'react';
 import { useScroll, motion, useTransform, useSpring } from 'framer-motion';
 import Magnetic from '../../common/Magnetic';
+import Link from "next/link";
 
 export default function Index() {
     const container = useRef(null);
@@ -71,16 +72,23 @@ export default function Index() {
                     <div>
                         <span>
                             <h3>SOCIALS</h3>
+                            <Link href={"https://www.linkedin.com/in/sidharth-thakur-104a481b3/"} style={{textDecoration: 'none', color: 'white'}}>
                             <Magnetic>
                                 <p>Linkdin</p>
                             </Magnetic>
+                            </Link>
+                            
                         </span>
+                        <Link href={"https://www.instagram.com/sidthakur.1/"} style={{textDecoration: 'none', color: 'white'}}>
                         <Magnetic>
                             <p>Instagram</p>
                         </Magnetic>
+                        </Link>
+                        <Link href={"https://twitter.com/Sidthakur_1"} style={{textDecoration: 'none', color: 'white'}}>
                         <Magnetic>
                             <p>X</p>
                         </Magnetic>
+                        </Link>
                       
                     </div>
                 </div>
