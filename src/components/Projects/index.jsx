@@ -16,7 +16,7 @@ const projects = [
   },
   {
     title: "I FOOD U",
-    src: "ifoodu.png",
+    src: "iFoodu.png",
     color: "#8C8C8C",
     links: "https://sidharth-thakur.github.io/IfoodU.github.io/"
   },
