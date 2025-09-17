@@ -9,28 +9,28 @@ import Rounded from '../../common/RoundedButton';
 
 const projects = [
   {
-    title: "I FOOD U",
-    src: "iFoodu.png",
-    color: "#000000",
-    links: "https://sidharth-thakur.github.io/IfoodU.github.io/"
-  },
-  {
     title: "React Portfolio",
     src: "reactPortfolio.png",
-    color: "#8C8C8C",
+    color: "#000000",
     links: "https://precious-moonbeam-deaf66.netlify.app/"
   },
   {
-    title: "Face recognisation",
-    src: "locomotive.png",
-    color: "#EFE8D3",
-    links: "https://iridescent-tartufo-bc4b7f.netlify.app/"
+    title: "I FOOD U",
+    src: "ifoodu.png",
+    color: "#8C8C8C",
+    links: "https://sidharth-thakur.github.io/IfoodU.github.io/"
   },
   {
-    title: "Quizz app",
-    src: "silencio.png",
+    title: "Ping Pong Game",
+    src: "PingPong.png",
+    color: "#EFE8D3",
+    links: "https://pingpong-hazel.vercel.app/"
+  },
+  {
+    title: "Biomax Company",
+    src: "Biomax.png",
     color: "#706D63",
-    links: "https://www.youtube.com/"
+    links: "https://sidharth-thakur.github.io/Biomax-company/"
   }
 ]
 
