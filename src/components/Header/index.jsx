@@ -39,8 +39,8 @@ export default function Index() {
                 <p className={styles.copyright}>©</p>
                 <div className={styles.name}>
                     <p className={styles.codeBy}>Code by</p>
-                    <p className={styles.dennis}>Sidharth</p>
-                    <p className={styles.snellenberg}>Thakur</p>
+                    <p className={styles.sidharth}>Sidharth</p>
+                    <p className={styles.thakur}>Thakur</p>
                 </div>
             </div>
             <div className={styles.nav}>
