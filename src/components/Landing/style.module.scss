@@ -111,7 +111,12 @@
   // =========================
   // MOBILE
   // =========================
-
+  @media (max-width < 1400px) {
+    .description {
+      top: calc(100vh - 200%);
+      left: 4%;
+    }
+  }
   @media (max-width: 500px) {
     .description {
       top: calc(100vh - 25%);
