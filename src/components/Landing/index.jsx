@@ -1,45 +1,40 @@
 "use client";
+
 import Image from "next/image";
 import styles from "./style.module.scss";
 import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import { slideUp } from "./animation";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const firstText = useRef(null);
-  const secondText = useRef(null);
   const slider = useRef(null);
-  let xPercent = 0;
-  let direction = -1;
 
   useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to(slider.current, {
-      scrollTrigger: {
-        trigger: document.documentElement,
-        scrub: 0.25,
-        start: 0,
-        end: window.innerHeight,
-        onUpdate: (e) => (direction = e.direction * -1),
-      },
-      x: "-500px",
-    });
-    requestAnimationFrame(animate);
-  }, []);
+    if (!slider.current) return;
 
-  const animate = () => {
-    if (xPercent < -100) {
-      xPercent = 0;
-    } else if (xPercent > 0) {
-      xPercent = -100;
+    let tween;
+
+    const start = () => {
+      tween?.kill();
+      gsap.set(slider.current, { xPercent: 0 }); // reset before measuring
+      tween = gsap.to(slider.current, {
+        xPercent: -33.333, // matches 3 copies now
+        duration: 18,
+        ease: "none",
+        repeat: -1,
+      });
+    };
+
+    // wait for fonts to finish loading so widths are stable
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(start);
+    } else {
+      start();
     }
-    gsap.set(firstText.current, { xPercent: xPercent });
-    gsap.set(secondText.current, { xPercent: xPercent });
-    requestAnimationFrame(animate);
-    xPercent += 0.1 * direction;
-  };
+
+    return () => tween?.kill();
+  }, []);
 
   return (
     <motion.main
@@ -48,13 +43,36 @@ export default function Home() {
       animate="enter"
       className={styles.landing}
     >
-      <Image src="/images/ME2.png" fill={true} alt="background" />
+      {/* BACKGROUND */}
+      <Image
+        src="/images/planbackground.png"
+        fill
+        priority
+        sizes="100vw"
+        alt=""
+        className={styles.background}
+      />
+
+      {/* INFINITE MOVING TEXT */}
       <div className={styles.sliderContainer}>
         <div ref={slider} className={styles.slider}>
-          <p ref={firstText}>Sidharth Thakur -</p>
-          <p ref={secondText}>Sidharth Thakur -</p>
+          <p>Sidharth Thakur -</p>
+          <p>Sidharth Thakur -</p>
+          <p>Sidharth Thakur -</p>
         </div>
       </div>
+
+      {/* CHARACTER */}
+      <Image
+        src="/images/model.png"
+        fill
+        priority
+        sizes="100vw"
+        alt="Sidharth"
+        className={styles.character}
+      />
+
+      {/* DESCRIPTION */}
       <div data-scroll data-scroll-speed={0.1} className={styles.description}>
         <svg
           width="9"
@@ -64,7 +82,7 @@ export default function Home() {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M8 8.5C8.27614 8.5 8.5 8.27614 8.5 8L8.5 3.5C8.5 3.22386 8.27614 3 8 3C7.72386 3 7.5 3.22386 7.5 3.5V7.5H3.5C3.22386 7.5 3 7.72386 3 8C3 8.27614 3.22386 8.5 3.5 8.5L8 8.5ZM0.646447 1.35355L7.64645 8.35355L8.35355 7.64645L1.35355 0.646447L0.646447 1.35355Z"
+            d="M8 8.5C8.27614 8.5 8.5 8.27614 8.5 8L8.5 3.5C8.5 3.22386 8.27614 3 8 3C7.72386 3 7.5 3.22386 7.5 3.5V7.5H3.5C3.22386 7.5 3 7.72386 3 8C3 8.27614 3 8.5 3.5 8.5L8 8.5ZM0.646447 1.35355L7.64645 8.35355L8.35355 7.646447L1.35355 0.646447L0.646447 0.646447Z"
             fill="white"
           />
         </svg>
