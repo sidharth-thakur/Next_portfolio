@@ -5,27 +5,30 @@
   height: 100vh;
   overflow: hidden;
 
-  // =========================
+  // =========================================
   // BACKGROUND
-  // =========================
+  // =========================================
 
   .background {
     position: absolute !important;
     inset: 0;
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     z-index: 0;
   }
 
-  // =========================
-  // INFINITE TEXT
-  // =========================
+  // =========================================
+  // INFINITE MOVING TEXT
+  // =========================================
 
   .sliderContainer {
     position: absolute;
+    top: calc(100vh - 260px);
     left: 0;
-    top: calc(100vh - 500px);
 
     width: 100%;
     overflow: hidden;
@@ -38,9 +41,6 @@
     display: flex;
     width: max-content;
     white-space: nowrap;
-    will-change: transform;
-    backface-visibility: hidden;
-    transform: translateZ(0);
   }
 
   .slider p {
@@ -61,9 +61,9 @@
       0 10px 25px rgba(0, 0, 0, 0.1);
   }
 
-  // =========================
+  // =========================================
   // CHARACTER
-  // =========================
+  // =========================================
 
   .character {
     position: absolute !important;
@@ -79,16 +79,15 @@
     pointer-events: none;
   }
 
-  // =========================
+  // =========================================
   // DESCRIPTION
-  // =========================
+  // =========================================
 
   .description {
-    display: none;
     position: absolute;
 
-    top: 80%;
-    left: 80%;
+    top: 50%;
+    left: 62%;
 
     z-index: 4;
 
@@ -103,41 +102,188 @@
     }
 
     svg {
+      display: block;
       transform: scale(2);
       margin-bottom: 25px;
     }
   }
 
-  // =========================
-  // MOBILE
-  // =========================
-  @media (max-width < 1400px) {
-    .description {
-      top: calc(100vh - 200%);
-      left: 4%;
-    }
-  }
-  @media (max-width: 500px) {
-    .description {
-      top: calc(100vh - 25%);
-      left: 4%;
-    }
 
-    .description svg {
-      top: 50%;
-      margin-bottom: 28px;
-    }
+  // =========================================
+  // TABLET
+  // 501px - 768px
+  // =========================================
+
+  @media (min-width: 501px) and (max-width: 768px) {
 
     .sliderContainer {
-      top: calc(100vh - 350px);
+      top: 65%;
     }
 
     .slider p {
-      font-size: max(6em, 20vw);
+      font-size: 100px;
+      padding-right: 35px;
     }
 
     .character {
       object-fit: contain;
+
+      transform: translateY(-5%) scale(1.6);
+    }
+
+    .description {
+      top: 50%;
+      left: auto;
+      right: 8%;
+
+      font-size: 18px;
+    }
+
+    .description svg {
+      transform: scale(1.5);
+      margin-bottom: 20px;
+    }
+  }
+
+
+  // =========================================
+  // MOBILE
+  // 500px AND BELOW
+  // =========================================
+
+  @media (max-width: 500px) {
+
+    // -----------------------------------------
+    // BACKGROUND
+    // -----------------------------------------
+
+    .background {
+      object-fit: cover;
+    }
+
+
+    // -----------------------------------------
+    // INFINITE NAME
+    // -----------------------------------------
+
+    .sliderContainer {
+      top: 15%;
+      left: 0;
+
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .slider {
+      width: max-content;
+    }
+
+    .slider p {
+      flex-shrink: 0;
+
+      font-size: 82px;
+      padding-right: 30px;
+
+      line-height: 0.95;
+    }
+
+
+    // -----------------------------------------
+    // CHARACTER
+    // -----------------------------------------
+
+    .character {
+      object-fit: contain;
+
+      /*
+        The model PNG has transparent space
+        around the character.
+
+        Increase the scale so the actual
+        character appears larger on mobile.
+      */
+
+      transform: translateX(-3%) translateY(30%) scale(4.5);
+ 
+      z-index: 3;
+    }
+
+
+    // -----------------------------------------
+    // DESCRIPTION
+    // -----------------------------------------
+
+    .description {
+      display: none;
+      top: 48%;
+
+      left: auto;
+      right: 6%;
+
+      z-index: 4;
+
+      font-size: 16px;
+
+      text-align: left;
+    }
+
+    .description p {
+      margin: 0;
+      margin-bottom: 6px;
+    }
+
+    .description svg {
+      display: block;
+
+      transform: scale(1.3);
+
+      margin-bottom: 16px;
+    }
+  }
+
+
+  // =========================================
+  // VERY SMALL PHONES
+  // =========================================
+
+  @media (max-width: 380px) {
+
+    .sliderContainer {
+      top: 15%;
+    }
+
+    .slider p {
+      font-size: 72px;
+      padding-right: 25px;
+    }
+
+    .character {
+     object-fit: contain;
+
+      /*
+        The model PNG has transparent space
+        around the character.
+
+        Increase the scale so the actual
+        character appears larger on mobile.
+      */
+
+      transform: translateX(-3%) translateY(30%) scale(4.5);
+ 
+      z-index: 3;
+    }
+
+    .description {
+      display: none;
+      top: 30%;
+      right: 5%;
+
+      font-size: 15px;
+    }
+
+    .description svg {
+      transform: scale(1.2);
+      margin-bottom: 14px;
     }
   }
 }
