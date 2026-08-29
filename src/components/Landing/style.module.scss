@@ -5,30 +5,27 @@
   height: 100vh;
   overflow: hidden;
 
-  // =========================================
+  // =========================
   // BACKGROUND
-  // =========================================
+  // =========================
 
   .background {
     position: absolute !important;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     z-index: 0;
   }
 
-  // =========================================
-  // INFINITE MOVING TEXT
-  // =========================================
+  // =========================
+  // INFINITE TEXT
+  // =========================
 
   .sliderContainer {
     position: absolute;
-    top: calc(100vh - 260px);
     left: 0;
+    top: calc(100vh - 500px);
 
     width: 100%;
     overflow: hidden;
@@ -41,6 +38,9 @@
     display: flex;
     width: max-content;
     white-space: nowrap;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
   }
 
   .slider p {
@@ -61,9 +61,9 @@
       0 10px 25px rgba(0, 0, 0, 0.1);
   }
 
-  // =========================================
+  // =========================
   // CHARACTER
-  // =========================================
+  // =========================
 
   .character {
     position: absolute !important;
@@ -79,45 +79,67 @@
     pointer-events: none;
   }
 
-  // =========================================
+  // =========================
   // DESCRIPTION
+  // =========================
+
+  // .description {
+  //   display: none;
+  //   position: absolute;
+
+  //   top: 80%;
+  //   left: 80%;
+
+  //   z-index: 4;
+
+  //   color: white;
+
+  //   font-size: 24px;
+  //   font-weight: 300;
+
+  //   p {
+  //     margin: 0;
+  //     margin-bottom: 10px;
+  //   }
+
+  //   svg {
+  //     transform: scale(2);
+  //     margin-bottom: 25px;
+  //   }
+  // }
+
+  // =========================================
+  // LARGE LAPTOPS / SMALL DESKTOPS
+  // 1301px - 1440px
+  // (kept close to default, light tightening)
   // =========================================
 
-  .description {
-    position: absolute;
-
-    top: 50%;
-    left: 62%;
-
-    z-index: 4;
-
-    color: white;
-
-    font-size: 24px;
-    font-weight: 300;
-
-    p {
-      margin: 0;
-      margin-bottom: 10px;
+  @media (min-width: 1301px) and (max-width: 1440px) {
+    .sliderContainer {
+      top: calc(100vh - 420px);
     }
 
-    svg {
-      display: block;
-      transform: scale(2);
-      margin-bottom: 25px;
+    .slider p {
+      font-size: 130px;
+      padding-right: 40px;
     }
+
+    .character {
+      transform: translateY(-4%) scale(1.35);
+    }
+
+    
   }
 
-
   // =========================================
-  // TABLET
-  // 501px - 768px
+  // 13" LAPTOPS
+  // 1025px - 1300px
+  // (MacBook 13", most 13"-14" windows laptops)
   // =========================================
 
-  @media (min-width: 501px) and (max-width: 768px) {
-
+  @media (min-width: 1025px) and (max-width: 1300px) {
     .sliderContainer {
-      top: 65%;
+      top: calc(100vh - 380px);
     }
 
     .slider p {
@@ -128,23 +150,70 @@
     .character {
       object-fit: contain;
 
-      transform: translateY(-5%) scale(1.6);
+      transform: translateY(-2%) scale(1.5);
     }
 
-    .description {
-      top: 50%;
-      left: auto;
-      right: 8%;
-
-      font-size: 18px;
-    }
-
-    .description svg {
-      transform: scale(1.5);
-      margin-bottom: 20px;
-    }
+   
   }
 
+  // =========================================
+  // 11" LAPTOPS / LARGE TABLETS (LANDSCAPE)
+  // 900px - 1024px
+  // (MacBook Air 11", iPad Pro landscape, small
+  // windows laptops)
+  // =========================================
+
+  @media (min-width: 900px) and (max-width: 1024px) {
+    .sliderContainer {
+      top: calc(100vh - 320px);
+    }
+
+    .slider p {
+      font-size: 82px;
+      padding-right: 30px;
+    }
+
+    .character {
+      object-fit: contain;
+
+      transform: translateY(0%) scale(1.6);
+    }
+
+   
+  }
+
+  // =========================================
+  // TABLETS (PORTRAIT)
+  // 501px - 899px
+  // (iPad portrait, most Android tablets)
+  // =========================================
+
+  @media (min-width: 501px) and (max-width: 899px) {
+    .sliderContainer {
+      top: 12%;
+
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .slider p {
+      font-size: 90px;
+      padding-right: 30px;
+
+      line-height: 0.95;
+    }
+
+    .character {
+      object-fit: contain;
+
+      transform: translateY(22%) scale(2.4);
+
+      z-index: 3;
+    }
+
+    
+  }
 
   // =========================================
   // MOBILE

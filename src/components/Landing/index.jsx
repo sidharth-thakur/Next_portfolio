@@ -72,7 +72,7 @@ export default function Home() {
         className={styles.character}
       />
 
-      {/* DESCRIPTION */}
+      {/* DESCRIPTION
       <div data-scroll data-scroll-speed={0.1} className={styles.description}>
         <svg
           width="9"
@@ -89,7 +89,7 @@ export default function Home() {
 
         <p>Freelance</p>
         <p>Designer & Developer</p>
-      </div>
+      </div> */}
     </motion.main>
   );
 }
